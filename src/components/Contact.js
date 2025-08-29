@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Col, Container } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg"
 
 export const Contact = () => {
@@ -12,13 +12,13 @@ export const Contact = () => {
     }
 
     const [formDetails, setFormDetails] = useState(formInitialDetails);
-    const [buttonText, setButtonTexts] = useState('Send');
+    const [buttonText, setButtonText] = useState('Send');
     const [status, setStatus] = useState({});
 
     const onFormUpdate = (category, value) => {
         setFormDetails({
             ...formDetails,
-            [cateogry]: value
+            [category]: value
         })
     }
 
