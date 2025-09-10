@@ -32,7 +32,7 @@ return (
         <Container>
             <Row>
                 <Col>
-                    <div className="skill-box">
+                    <div className="skill-bx">
                         <h2>
                             Skills
                         </h2>
