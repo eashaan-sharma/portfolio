@@ -2,6 +2,9 @@ import { use, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap"
 import { ArrowRightCircle, Tornado } from "react-bootstrap-icons"
 import headerImg from "../assets/img/header-img.svg";
+import 'animate.css';
+import TrackVisibility from "react-on-screen";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
@@ -45,21 +48,27 @@ export const Banner = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col xs = {12} md = {6} xl = {7}>
-                    <span className="tagline">
-                        Welcome to my Portfolio
-                    </span>
-                    <h1>
-                        {`Hi, I'm Eashaan Sharma, a `}
-                        <span className="wrap">
-                            {text}
-                        </span>
-                    </h1>
-                    <p>
-                        This is where I have to insert my introduction!
-                    </p>
-                    <button onClick={() => console.log('connect')}>
-                        Let's Connect!<ArrowRightCircle size={25}/>
-                    </button>
+                    <TrackVisibility>
+                    {({ isVisible }) =>
+                        <div className={isVisible ? "animate__animated animate_fadeIn" : ""}>
+                            <span className="tagline">
+                                Welcome to my Portfolio
+                            </span>
+                            <h1>
+                                {`Hi, I'm Eashaan Sharma, a `}
+                                <span className="wrap">
+                                    {text}
+                                </span>
+                            </h1>
+                            <p>
+                                This is where I have to insert my introduction!
+                            </p>
+                            <button onClick={() => window.open("https://www.linkedin.com/in/eashaan-sharma", "_blank", "noopener,noreferrer")}>
+                            Let's Connect! <ArrowRightCircle size={25}/>
+                            </button>
+                        </div>
+                    }    
+                    </TrackVisibility>
                     </Col>
                     <Col xs = {12} md = {6} xl = {5}>
                         <img src = {headerImg} alt = "Header Img"/>
