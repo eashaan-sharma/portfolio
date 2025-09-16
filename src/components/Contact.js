@@ -23,24 +23,32 @@ export const Contact = () => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        setButtonText('Sending...');
-        let response = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "Application/json;charset=utf-8",
-            },
-            body: JSON.stringify(formDetails),
-        })
+    e.preventDefault();
+    setButtonText("Sending...");
+
+    try {
+        const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formDetails),
+        });
+
         setButtonText("Send");
-        let result = response.json();
+        const result = await response.json(); // <-- add await
+
         setFormDetails(formInitialDetails);
+
         if (result.code === 200) {
-            setStatus({ success: true, message: 'Message sent successfully'});
+        setStatus({ success: true, message: "Message sent successfully" });
         } else {
-            setStatus({ success: false, message: 'Message not sent, please try later'})
+        setStatus({ success: false, message: result.message || "Message not sent, please try later" });
         }
+    } catch (err) {
+        setButtonText("Send");
+        setStatus({ success: false, message: "Network error, please try later" });
+    }
     };
+
 
     return (
         <section className="contact" id="connect">
@@ -68,7 +76,7 @@ export const Contact = () => {
                                 <input type = "tel" value = {formDetails.phone} placeholder = "Phone Number" onChange = {(e) => onFormUpdate('phone', e.target.value)}/>
                             </Col>
                             <Col>
-                                <textarea row = "6" value={formDetails.message} placeholder="Message" onChange = {(e) => onFormUpdate('message', e.target.value)}/>
+                                <textarea rows = "6" value={formDetails.message} placeholder="Message" onChange = {(e) => onFormUpdate('message', e.target.value)}/>
                                 <button type="submit">
                                     <span>
                                         {buttonText}
