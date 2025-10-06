@@ -46,22 +46,22 @@ return (
                         </div>
                         <div className="item" aria-label="Skill 2">
                             <img src={meter2} alt="Image" />
-                            <h5>Skill 2</h5>
+                            <h5>Backend Dev Skills</h5>
                         </div>
                         <div className="item" aria-label="Skill 3">
                             <img src={meter3} alt="Image" />
-                            <h5>Skill 3</h5>
+                            <h5>UI/UX Design</h5>
                         </div>
                         <div className="item" aria-label="Skill 4">
                             <img src={meter1} alt="Image" />
-                            <h5>Skill 4</h5>
+                            <h5>Communication Skills</h5>
                         </div>
                         </Carousel>
                     </div>
                 </Col>
             </Row>
         </Container>
-        <img className="background-image-left" src = {colorSharp} alt = "Gradient"/>
+
     </section>
 )
 
