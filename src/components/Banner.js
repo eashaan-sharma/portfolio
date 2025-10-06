@@ -61,7 +61,7 @@ export const Banner = () => {
                                 </span>
                             </h1>
                             <p>
-                                This is where I have to insert my introduction!
+                                Hi, I’m Eashaan, a passionate software developer with a focus on building clean, efficient, and user-friendly web applications. I enjoy transforming ideas into functional solutions using modern technologies, and I’m always eager to learn, adapt, and collaborate on impactful projects.
                             </p>
                             <button onClick={() => window.open("https://www.linkedin.com/in/eashaan-sharma", "_blank", "noopener,noreferrer")}>
                             Let's Connect! <ArrowRightCircle size={25}/>
