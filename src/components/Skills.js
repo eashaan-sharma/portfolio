@@ -37,24 +37,20 @@ return (
                             Skills
                         </h2>
                         <p>
-                            Insert text about your skills here.
+                            While this is simply to showcase the carousel element, these are some of the skills I've picked up.
                         </p>
                         <Carousel responsive={responsive} infinite={true} className="skill-slider">
                         <div className="item" aria-label="Web Development skill">
                             <img src={meter1} alt="Image" />
-                            <h5>Web Development</h5>
+                            <h5>Programming</h5>
                         </div>
                         <div className="item" aria-label="Skill 2">
                             <img src={meter2} alt="Image" />
-                            <h5>Backend Dev Skills</h5>
+                            <h5>UI Design</h5>
                         </div>
                         <div className="item" aria-label="Skill 3">
                             <img src={meter3} alt="Image" />
-                            <h5>UI/UX Design</h5>
-                        </div>
-                        <div className="item" aria-label="Skill 4">
-                            <img src={meter1} alt="Image" />
-                            <h5>Communication Skills</h5>
+                            <h5>Web Development</h5>
                         </div>
                         </Carousel>
                     </div>
